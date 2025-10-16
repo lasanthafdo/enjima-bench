@@ -1,0 +1,396 @@
+benchmarkConfig:
+        SCALE_YSB:
+                benchmark: "YSB"
+                inputRates: "12000000" 
+                maxMemory: 12288
+                latencyRes: "Micros"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive FCFS MinLatency HighestRate MinCost RoundRobin"
+                schedulingPeriod: "1"
+                maxIdleThresholdMs: "1"
+  
+                numWorkers: 16
+                numQueriesArr: "1 2 4 6 8 10"
+                expType: "config_specific"
+                useTimeout: false
+                specific:
+                        querySpecificNumWorkers: false
+                        TB:
+                                processingModes: "QueueBasedSingle"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "BlockBasedBatch"
+                                backpressureThreshold: 50
+
+        SINGLE_YSB:
+                benchmark: "YSB"
+                inputRates: "6000000 12000000 18000000 24000000 30000000 36000000" 
+                maxMemory: 12288
+                latencyRes: "Micros"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive"
+                schedulingPeriod: "1"
+                maxIdleThresholdMs: "1"
+  
+                numWorkers: 2
+                numQueriesArr: "1"
+                expType: "config_specific"
+                useTimeout: false
+                specific:
+                        querySpecificNumWorkers: false
+                        TB:
+                                processingModes: "QueueBasedSingle BlockBasedBatch"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "QueueBasedSingle BlockBasedBatch"
+                                backpressureThreshold: 50
+
+        INPUT_VAR_YSB:
+                benchmark: "YSB"
+                inputRates: "12000000"
+                maxMemory: 12288
+                latencyRes: "Micros"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive FCFS MinLatency HighestRate MinCost RoundRobin"
+                schedulingPeriod: "1"
+                maxIdleThresholdMs: "1"
+
+                varyRate: true
+                minInputRates: "1000000"
+                stepSize: 1000000_4000000_6000000
+                shiftIntervalMs: 60000
+
+                numWorkers: 16
+                numQueriesArr: "6"
+                expType: "config_specific"
+                useTimeout: false
+                specific:
+                        querySpecificNumWorkers: false
+                        TB:
+                                processingModes: "QueueBasedSingle"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "BlockBasedBatch"
+                                backpressureThreshold: 50
+
+         CONCEPT_DRIFT_YSB:
+                benchmark: "YSB"
+                inputRates: "12000000" 
+                maxMemory: 12288
+                latencyRes: "Micros"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                parLevels: 1
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive FCFS MinLatency HighestRate MinCost RoundRobin"
+                schedulingPeriod: "1"
+                maxIdleThresholdMs: 1
+                
+                varyRate: true
+                minInputRates: "0"
+                stepSize: 0
+                shiftIntervalMs: 60000
+
+                numWorkers: 16
+                numQueriesArr: "6"
+                expType: "config_specific"
+                useTimeout: false
+                specific:
+                        TB:
+                                processingModes: "QueueBasedSingle"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "BlockBasedBatch"
+                                backpressureThreshold: 50
+
+        SENS_CHUNK_YSB:
+                benchmark: "YSB"
+                inputRates: "30000000" 
+                maxMemory: 12288
+                latencyRes: "Micros"
+                eventsPerBlock: "384"
+                blocksPerChunk: "2 4 8 16 32 64 128 256 512 1024"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                processingModes: "BlockBasedBatch"
+                schedulingModes: "SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive"
+                schedulingPeriod: "1"
+                maxIdleThresholdMs: "1"
+                eventThreshold: "1000"
+  
+                numWorkers: 2
+                numQueriesArr: "1"
+                expType: "sensitivity_analysis"
+                useTimeout: false
+
+        SENS_BLOCK_YSB:
+                benchmark: "YSB"
+                inputRates: "30000000" 
+                maxMemory: 12288
+                latencyRes: "Micros"
+                eventsPerBlock: "64 128 256 384 512 1024 2048 4096 8192"
+                blocksPerChunk: "4"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                processingModes: "BlockBasedBatch"
+                schedulingModes: "SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive"
+                schedulingPeriod: "1"
+                maxIdleThresholdMs: "1"
+                eventThreshold: "1000"
+  
+                numWorkers: 2
+                numQueriesArr: "1"
+                expType: "sensitivity_analysis"
+                useTimeout: false
+
+        SENS_SCHED_YSB:
+                benchmark: "YSB"
+                inputRates: "12000000" 
+                maxMemory: 12288
+                latencyRes: "Micros"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                processingModes: "BlockBasedBatch"
+                schedulingModes: "SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive"
+                schedulingPeriod: "1 2 5 10 20 50"
+                maxIdleThresholdMs: "1"
+                eventThreshold: "1000"
+  
+                numWorkers: 16
+                numQueriesArr: "6"
+                expType: "sensitivity_analysis"
+                useTimeout: false
+
+        SCALE_LRB:
+                benchmark: "LRB"
+                inputRates: "3000000" 
+                maxMemory: 24576
+                latencyRes: "Millis"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive FCFS MinLatency HighestRate MinCost RoundRobin"
+                schedulingPeriod: 1
+                maxIdleThresholdMs: 1
+                
+                numWorkers: 16
+                numQueriesArr: "1 2 4 6 8 10"
+                expType: "config_specific"
+                dataPath: "/hdd1/enjima/tests/data/datafile3hours.dat"
+                useTimeout: "false"
+                specific:
+                        querySpecificNumWorkers: "false"
+                        TB:
+                                processingModes: "QueueBasedSingle"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "BlockBasedBatch"
+                                backpressureThreshold: 50 
+
+        SINGLE_LRB:
+                benchmark: "LRB"
+                inputRates: "1500000 3000000 4500000 6000000 7500000 9000000" 
+                maxMemory: 24576
+                latencyRes: "Millis"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive"
+                schedulingPeriod: 1
+                maxIdleThresholdMs: 1
+                
+                numWorkers: 2
+                numQueriesArr: "1"
+                expType: "config_specific"
+                dataPath: "/hdd1/enjima/tests/data/datafile3hours.dat"
+                useTimeout: "false"
+                specific:
+                        querySpecificNumWorkers: "false"
+                        TB:
+                                processingModes: "QueueBasedSingle BlockBasedBatch"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "QueueBasedSingle BlockBasedBatch"
+                                backpressureThreshold: 50 
+
+         INPUT_VAR_LRB: 
+                benchmark: "LRB"
+                inputRates: "3600000" 
+                maxMemory: 24576
+                latencyRes: "Millis"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive FCFS MinLatency HighestRate MinCost RoundRobin"
+                schedulingPeriod: 1
+                maxIdleThresholdMs: 1
+                
+                varyRate: true
+                minInputRates: "300000"
+                stepSize: 300000_1200000_1800000
+                shiftIntervalMs: 60000
+
+                numWorkers: 16
+                numQueriesArr: "6"
+                expType: "config_specific"
+                dataPath: "/hdd1/enjima/tests/data/datafile3hours.dat"
+                useTimeout: "false"
+                specific:
+                        querySpecificNumWorkers: "false"
+                        TB:
+                                processingModes: "QueueBasedSingle"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "BlockBasedBatch"
+                                backpressureThreshold: 50 
+
+        SCALE_NYTODQ:
+                benchmark: "NYTODQ"
+                inputRates: "8000000" 
+                maxMemory: 12288
+                latencyRes: "Micros"
+                latencyType: "Processing"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive FCFS MinLatency HighestRate MinCost RoundRobin"
+                schedulingPeriod: 1
+                maxIdleThresholdMs: 1
+
+                numWorkers: 16
+                numQueriesArr: "1 2 4 6 8 10"
+                expType: "config_specific"
+                dataPath: "/hdd1/enjima/tests/data/2013_Jan_DQ_headerless_sorted.csv"
+                useTimeout: "false"
+                specific:
+                        querySpecificNumWorkers: "false"
+                        TB:
+                                processingModes: "QueueBasedSingle"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "BlockBasedBatch"
+                                backpressureThreshold: 50 
+       
+        MIXEDALL_SB:
+                benchmark: "MIXEDALL"
+                mixedWorkload: "true"
+                mixed:
+                  workloadA:
+                    inputRates: "3000000"
+                  workloadB:
+                    inputRates: "12000000"
+                  workloadC:
+                    inputRates: "8000000"
+                maxMemory: 24576
+                latencyRes: "Micros"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "SBPriority"
+                preemptModes: "NonPreemptive"
+                priorityTypes: "Adaptive FCFS MinLatency MinCost RoundRobin HighestRate"
+                schedulingPeriod: 1
+                maxIdleThresholdMs: 1
+
+                numWorkers: 16
+                numQueriesArr: "6 9 12 15"
+                dataPath: "/hdd1/enjima/tests/data/datafile3hours.dat"
+                additionalDataPath: "/hdd1/enjima/tests/data/2013_Jan_DQ_headerless_sorted.csv"
+                expType: "config_specific"
+                useTimeout: "false"
+                specific:
+                        querySpecificNumWorkers: "false"
+                        TB:
+                                processingModes: "QueueBasedSingle"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "BlockBasedBatch"
+                                backpressureThreshold: 50 
+
+        MIXEDALL_TB:
+                benchmark: "MIXEDALL"
+                mixedWorkload: "true"
+                mixed:
+                  workloadA:
+                    inputRates: "3000000"
+                  workloadB:
+                    inputRates: "12000000"
+                  workloadC:
+                    inputRates: "8000000"
+                maxMemory: 24576
+                latencyRes: "Micros"
+                eventsPerBlock: "512"
+                blocksPerChunk: "8"
+                backpressureThreshold: 50
+                targetDir: "cmake-release-build"
+                latencyValues: "50"
+                schedulingModes: "TB"
+                preemptModes: "NonPreemptive"
+                schedulingPeriod: 1
+                maxIdleThresholdMs: 1
+
+                numWorkers: 16
+                numQueriesArr: "6 9 12 15"
+                dataPath: "/hdd1/enjima/tests/data/datafile3hours.dat"
+                additionalDataPath: "/hdd1/enjima/tests/data/2013_Jan_DQ_headerless_sorted.csv"
+                expType: "config_specific"
+                useTimeout: "false"
+                specific:
+                        querySpecificNumWorkers: "false"
+                        TB:
+                                processingModes: "QueueBasedSingle"
+                                backpressureThreshold: 50
+                        SB:
+                                processingModes: "BlockBasedBatch"
+                                backpressureThreshold: 50 

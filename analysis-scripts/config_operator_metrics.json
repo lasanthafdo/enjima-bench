@@ -1,0 +1,160 @@
+{
+  "data_dir": "/home/m34ferna/enjima/metrics",
+  "additional_metrics_dir": "/home/m34ferna/enjima/additional-metrics",
+  "source_dir": "/home/m34ferna/src/enjima",
+  "results_dir": "/home/m34ferna/enjima/results",
+  "data_wrangling_only": true,
+  "data_wrangling_params": {
+    "gen_overhead": false
+  },
+  "analyze_batch_stats": false,
+  "analyze_sched_stats": false,
+  "tp_latency_only": false,
+  "do_normal_run": false,
+  "analyze_individual_op_metrics": false,
+  "analyze_agg_op_metrics": false,
+  "analyze_grouped_op_metrics": false,
+  "analyze_sys_stats": false,
+  "sys_stats_to_analyze": {
+    "cpu": true,
+    "mem": true,
+    "process_grouped_sys_metrics": false
+  },
+  "normalize_res_usage": {
+    "u_time_ms_s_time_ms": false,
+    "rss_kb": false
+  },
+  "run_targeted_metrics": false,
+  "all_possible_groups": "input_rate,num_workers,processing_mode,scheduling_mode,preempt_mode,scheduling_policy,num_queries,bp_threshold,scheduling_period,allocation_mode",
+  "multistage_processing": false,
+  "processing_stage": 0,
+  "current_bench_name": "lrb",
+  "preferred_graph_type": "bar",
+  "time_lower": 29,
+  "time_upper": 331,
+  "_exp_date_id": "2025_07_31_1155_tem104",
+  "__exp_date_id": "2025_07_31_2146_tem105",
+  "___exp_date_id": "2025_07_31_2146_tem107",
+  "exp_date_id": "2025_07_31_2146_tem105",
+  "intermediate_id": "0",
+  "__intermediate_id": "single_lrb_2w_event_latency_operator_metrics_v1_0_0",
+  "combined_data_ids": "2025_04_11_2005_tem107|2025_04_12_2012_tem107|2025_04_13_1608_tem107|2025_04_13_1838_tem107",
+  "group_by_types": "input_rate,processing_mode,scheduling_mode,scheduling_policy,allocation_mode",
+  "independent_var": "input_rate",
+  "__COMMENT__APPEARANCE__ORDER__": "=================================================== Beginning of appearance order configurations ===================================================",
+  "__appearance_order": "BlockBasedBatch_SBPriority_FCFS_OnDemand_8-CountAndSpeedJoin,BlockBasedBatch_SBPriority_FCFS_OnDemand_9-TollAndAccidentCoGroup,BlockBasedBatch_SBPriority_MinLatency_OnDemand_8-CountAndSpeedJoin,BlockBasedBatch_SBPriority_MinLatency_OnDemand_9-TollAndAccidentCoGroup,BlockBasedBatch_SBPriority_RoundRobin_OnDemand_8-CountAndSpeedJoin,BlockBasedBatch_SBPriority_RoundRobin_OnDemand_9-TollAndAccidentCoGroup,BlockBasedBatch_SBPriority_MinCost_OnDemand_8-CountAndSpeedJoin,BlockBasedBatch_SBPriority_MinCost_OnDemand_9-TollAndAccidentCoGroup,BlockBasedBatch_SBPriority_Adaptive_PreAllocate_8-CountAndSpeedJoin,BlockBasedBatch_SBPriority_Adaptive_PreAllocate_9-TollAndAccidentCoGroup",
+  "appearance_order": "BlockBasedBatch_SBPriority_FCFS_OnDemand,BlockBasedBatch_SBPriority_MinLatency_OnDemand,BlockBasedBatch_SBPriority_RoundRobin_OnDemand,BlockBasedBatch_SBPriority_MinCost_OnDemand,BlockBasedBatch_SBPriority_Adaptive_PreAllocate",
+  "stacked_appearance_order": {
+    "u_time_ms_s_time_ms": "QueueBasedSingle_TB_InputQueueSize_OnDemand_UserTime,BlockBasedBatch_SBPriority_Adaptive_PreAllocate_UserTime,QueueBasedSingle_TB_InputQueueSize_OnDemand_SystemTime,BlockBasedBatch_SBPriority_Adaptive_PreAllocate_SystemTime",
+    "rss_kb": "QueueBasedSingle_TB_InputQueueSize_OnDemand,BlockBasedBatch_SBPriority_Adaptive_PreAllocate"
+  },
+  "__COMMENT__PLOT__CONFIGS__": "=================================================== Beginning of various plot configurations ===================================================",
+  "set_title": false,
+  "set_non_group_text": false,
+  "show_legend": false,
+  "plot_file_type": "pdf",
+  "plot_font_size": 30,
+  "legend_prop_size": 20,
+  "plot_line_width": 3,
+  "ncols_legend": 3,
+  "bar_width_scale_factor": 0.85,
+  "label_padding": 10,
+  "thread_ids_to_skip": {
+    "2025_04_11_2005_tem107": "81597,81613,81641,81653,81673,81689,81839,81856,81872,81891,81909,81928,85318,85332,85352,85371,85385,85414,85541,85557,85579,85603,85618,85633,86058,86075,86093,86110,86127,86144,86285,86308,86324,86340,86355,86373",
+    "2025_04_12_2012_tem107": "89670,89691,89715,89732,89751,89762,89783,89805,90142,90158,90170,90187,90204,90232,90247,90262,90462,90476,90501,90520,90530,90546,90565,90585"
+  },
+  "query_skip_list": "12",
+  "label_by_parts": false,
+  "exp_id_based_names": false,
+  "plot_external_systems": false,
+  "plot_filename_suffix": "op_metrics_q1",
+  "show_err_bars": true,
+  "__COMMENT__OTHER__": "=================================================== Beginning of various other configurations ===================================================",
+  "part_indices": {
+    "benchmark_name": 1,
+    "input_rate": 2,
+    "processing_mode": 3,
+    "scheduling_mode": 4,
+    "iter": 5,
+    "preempt_mode": 6,
+    "scheduling_policy": 7,
+    "num_workers": 8,
+    "max_memory": 9,
+    "bp_threshold": 10,
+    "latency_res": 11,
+    "scheduling_period": 12,
+    "num_queries": 13,
+    "allocation_mode": 14,
+    "block_size": 15,
+    "chunk_size": 16
+  },
+  "latency_columns": "thread_id,sys_id,timestamp,metric_type,avg,p95",
+  "latency_col_dtypes": "int,str,int,str,float,int",
+  "tp_columns": "thread_id,sys_id,timestamp,metric_type,throughput",
+  "tp_col_dtypes": "int,str,int,str,float",
+  "count_columns": "thread_id,sys_id,timestamp,metric_type,count",
+  "count_col_dtypes": "int,str,int,str,int",
+  "op_metrics_columns": "thread_id,sys_id,timestamp,metric_type,value",
+  "op_metrics_col_dtypes": "int,str,int,str,float",
+  "op_metrics_to_skip": "loggingSink_cost_gauge,yahoo-streaming-src_cost_gauge,loggingSink_selectivity_gauge,yahoo-streaming-src_selectivity_gauge",
+  "sys_metrics_columns": "thread_id,sys_id,timestamp,metric_type,process_id,value",
+  "sys_metrics_col_dtypes": "int,str,int,str,int,float",
+  "sys_metrics_to_skip": "processor,maj_flt,c_maj_flt,c_min_flt,start_brk,start_data,end_data,c_u_time_ms,c_s_time_ms,num_threads",
+  "perf_stat_columns": "timestamp,counter_value,unit_label,event_name,counter_runtime,measurement_time_percentage,optional_metric_val,optional_metric_unit_label",
+  "perf_stat_col_dtypes": "float,int,str,str,int,float,float,str",
+  "benchmark_labels": {
+    "YSB": "YSB",
+    "LRB": "LRB",
+    "YSBSB": "YSB - Source Bench"
+  },
+  "target_vars": {
+    "schedTime_counter": "count",
+    "schedCount_counter": "count",
+    "schedTimeDiff_counter": "count",
+    "schedCountDiff_counter": "count",
+    "throughput": "throughput",
+    "latency": "avg",
+    "event_count": "count",
+    "scheduledTime_gauge": "value",
+    "scheduledCount_gauge": "value",
+    "batchSizeAvg_gauge": "value",
+    "pendingEvents_gauge": "value",
+    "cost_gauge": "value"
+  },
+  "flink": {
+    "input_rate": "6000000",
+    "num_workers": "24",
+    "max_memory": "24576",
+    "bp_threshold": "2",
+    "time_lower": 329,
+    "time_upper": 572
+  },
+  "y_max": {
+    "event_count": 0,
+    "throughput": 0,
+    "latency": 0
+  },
+  "x_tick_scale": {
+    "input_rate": 1000000,
+    "num_queries": 1,
+    "scheduling_period": 1
+  },
+  "set_measurement_label": {
+    "latency": true,
+    "throughput": true
+  },
+  "unit_scale": {
+    "vm_usage_kb": 1024.0,
+    "rss_kb": 1024.0
+  },
+  "legend_coords": {
+    "chunk_size": {
+      "x": 0.2,
+      "y": 0.5
+    },
+    "block_size": {
+      "x": 0.4,
+      "y": 0.5
+    }
+  }
+}

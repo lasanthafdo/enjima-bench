@@ -1,0 +1,148 @@
+{
+  "data_dir": "/home/m34ferna/enjima/metrics",
+  "additional_metrics_dir": "/home/m34ferna/enjima/additional-metrics",
+  "source_dir": "/home/m34ferna/src/enjima",
+  "results_dir": "/home/m34ferna/enjima/results",
+  "analyze_batch_stats": false,
+  "analyze_sched_stats": false,
+  "tp_latency_only": true,
+  "do_normal_run": false,
+  "analyze_individual_op_metrics": false,
+  "analyze_agg_op_metrics": false,
+  "analyze_grouped_op_metrics": false,
+  "analyze_sys_stats": false,
+  "sys_stats_to_analyze": {
+    "cpu": false,
+    "mem": false
+  },
+  "normalize_res_usage": false,
+  "run_targeted_metrics": false,
+  "__COMMENT__GROUPS__": "=================================================== Beginning of field groups ===================================================",
+  "all_possible_groups": "input_rate,num_workers,processing_mode,scheduling_mode,preempt_mode,scheduling_policy,num_queries,bp_threshold,scheduling_period,allocation_mode",
+  "__COMMENT__HIGH_LEVEL__": "=================================================== Beginning of high level configuration parameters ===================================================",
+  "multistage_processing": false,
+  "processing_stage": 3,
+  "current_bench_name": "lrb",
+  "preferred_graph_type": "bar",
+  "time_lower": 29,
+  "time_upper": 271,
+  "exp_date_id": "2025_01_15_0127",
+  "intermediate_id": "0",
+  "group_by_types": "input_rate,processing_mode,scheduling_mode,scheduling_policy,allocation_mode",
+  "independent_var": "input_rate",
+  "__COMMENT__APPEARANCE__ORDER__": "=================================================== Beginning of appearance order configurations ===================================================",
+  "use_appearance_order": true,
+  "appearance_order": "BlockBasedSingle_TB_InputQueueSize_OnDemand,BlockBasedBatch_TB_InputQueueSize_OnDemand,BlockBasedSingle_SBPriority_LatencyOptimized_PreAllocate,BlockBasedBatch_SBPriority_LatencyOptimized_PreAllocate",
+  "__COMMENT__PLOT__CONFIGS__": "=================================================== Beginning of various plot configurations ===================================================",
+  "set_title": false,
+  "set_non_group_text": false,
+  "show_legend": true,
+  "plot_file_type": "png",
+  "plot_font_size": 10,
+  "legend_prop_size": 16,
+  "plot_line_width": 3,
+  "ncols_legend": 4,
+  "bar_width_scale_factor": 0.85,
+  "label_padding": 10,
+  "x_var_skip_list": "6000000",
+  "label_by_parts": false,
+  "exp_id_based_names": false,
+  "plot_filename_suffix": "scale_i",
+  "show_err_bars": true,
+  "__COMMENT__OTHER__": "=================================================== Beginning of various other configurations ===================================================",
+  "part_indices": {
+    "benchmark_name": 1,
+    "input_rate": 2,
+    "processing_mode": 3,
+    "scheduling_mode": 4,
+    "iter": 5,
+    "preempt_mode": 6,
+    "scheduling_policy": 7,
+    "num_workers": 8,
+    "max_memory": 9,
+    "bp_threshold": 10,
+    "latency_res": 11,
+    "scheduling_period": 12,
+    "num_queries": 13,
+    "allocation_mode": 14,
+    "block_size": 15,
+    "chunk_size": 16
+  },
+  "latency_columns": "thread_id,sys_id,timestamp,metric_type,avg,p95",
+  "latency_col_dtypes": "int,str,int,str,float,int",
+  "tp_columns": "thread_id,sys_id,timestamp,metric_type,throughput",
+  "tp_col_dtypes": "int,str,int,str,float",
+  "count_columns": "thread_id,sys_id,timestamp,metric_type,count",
+  "count_col_dtypes": "int,str,int,str,int",
+  "op_metrics_columns": "thread_id,sys_id,timestamp,metric_type,value",
+  "op_metrics_col_dtypes": "int,str,int,str,float",
+  "op_metrics_to_skip": "loggingSink_cost_gauge,yahoo-streaming-src_cost_gauge,loggingSink_selectivity_gauge,yahoo-streaming-src_selectivity_gauge",
+  "sys_metrics_columns": "thread_id,sys_id,timestamp,metric_type,process_id,value",
+  "sys_metrics_col_dtypes": "int,str,int,str,int,float",
+  "sys_metrics_to_skip": "processor,maj_flt,c_maj_flt,c_min_flt,start_brk,start_data,end_data,c_u_time_ms,c_s_time_ms,num_threads",
+  "perf_stat_columns": "timestamp,counter_value,unit_label,event_name,counter_runtime,measurement_time_percentage,optional_metric_val,optional_metric_unit_label",
+  "perf_stat_col_dtypes": "float,int,str,str,int,float,float,str",
+  "benchmark_labels": {
+    "YSB": "YSB",
+    "LRB": "LRB",
+    "YSBSB": "YSB - Source Bench"
+  },
+  "target_vars": {
+    "schedTime_counter": "count",
+    "schedCount_counter": "count",
+    "schedTimeDiff_counter": "count",
+    "schedCountDiff_counter": "count",
+    "throughput": "throughput",
+    "latency": "avg",
+    "event_count": "count",
+    "scheduledTime_gauge": "value",
+    "scheduledCount_gauge": "value",
+    "batchSizeAvg_gauge": "value",
+    "pendingEvents_gauge": "value",
+    "cost_gauge": "value"
+  },
+  "flink": {
+    "input_rate": "6000000",
+    "num_workers": "24",
+    "max_memory": "24576",
+    "bp_threshold": "2",
+    "time_lower": 329,
+    "time_upper": 572
+  },
+  "y_max": {
+    "event_count": 0,
+    "throughput": 0,
+    "latency": 0
+  },
+  "x_tick_scale": {
+    "input_rate": 1000000,
+    "num_queries": 1,
+    "scheduling_period": 1
+  },
+  "set_measurement_label": {
+    "latency": true,
+    "throughput": true
+  },
+  "unit_scale": {
+    "vm_usage_kb": 1024.0,
+    "rss_kb": 1024.0
+  },
+  "legend_coords": {
+    "chunk_size": {
+      "x": 0.2,
+      "y": 0.5
+    },
+    "block_size": {
+      "x": 0.4,
+      "y": 0.5
+    },
+    "input_rate": {
+      "x": 0.02,
+      "y": 1.45
+    },
+    "throughput": {
+      "x": 0.01,
+      "y": 0.99
+    }
+  }
+}

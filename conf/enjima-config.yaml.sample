@@ -1,0 +1,22 @@
+runtime:
+  eventGenCpuList: "0,1,2,12,13,14"
+  workerCpuList: "3,4,5,6,7,8,9,10,11,15,16,17,18,19,20,21"
+  # eventGenCpuList: "0"
+  # workerCpuList: "3,4"
+  preAllocationMode: "2"
+  scheduling:
+          maxEventThreshold: 10000
+
+metrics:
+  internalUpdateIntervalMs: 50
+  loggingPeriodMs: 10000
+
+# workload:
+#  LRB:
+#    windowParameters:
+#      accidentDetectionWindowDurationSecs: 40
+#      accidentDetectionWindowSlideSecs: 10
+#      speedWindowDurationSecs: 20
+#      countWindowDurationSecs: 20
+#      countAndSpeedJoinDurationSecs: 60
+#      tollAndAccidentCoGroupDurationSecs: 60
